@@ -1,5 +1,6 @@
 ﻿using Domain.Abstracts;
 using Domain.Entities.Masters;
+using Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -17,14 +18,18 @@ public class Attendance : AuditTrail
     [Required]
     public TimeOnly TimeOut { get; set; }
     [Required]
-    public Double Latitude { get; set; }
-    [Required]
-    public Double Longitude { get; set; }
+    public AttendanceStatus Status { get; set; }
+    public double? CheckInLatitude { get; set; }
+    public double? CheckInLongitude { get; set; }
+    public double? CheckOutLatitude { get; set; }
+    public double? CheckOutLongitude { get; set; }
     public Guid? EarlyOutKey { get; set; } = Guid.Empty;
     public Guid? LatePermitKey { get; set; } = Guid.Empty;
     public Guid? OvertimeKey { get; set; } = Guid.Empty;
     public Guid? OutPermitKey { get; set; } = Guid.Empty;
     public Guid? LeaveSubmissionKey { get; set; } = Guid.Empty;
+    [MaxLength(200)]
+    public string? Description { get; set; } = String.Empty;
 
     [NotMapped]
     public Employee Employee { get; set; } = null!;

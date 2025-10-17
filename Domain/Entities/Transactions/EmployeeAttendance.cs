@@ -1,4 +1,5 @@
 ﻿using Domain.Abstracts;
+using Domain.Entities.Masters;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,4 +12,6 @@ public class EmployeeAttendance : AuditTrail
     public Guid EmployeeKey { get; set; }
     [Required]
     public Guid ApprovalConfigKey { get; set; }
+    [NotMapped]
+    public ApprovalConfig? ApprovalConfig { get; set; }
 }

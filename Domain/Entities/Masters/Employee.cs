@@ -34,4 +34,6 @@ public class Employee : AuditTrail
     public Grade? Grade { get; set; }
     [NotMapped]
     public Employee? DirectSupervisor { get; set; }
+    [NotMapped]
+    public EmployeePersonal? EmployeePersonal { get; set; }
 }

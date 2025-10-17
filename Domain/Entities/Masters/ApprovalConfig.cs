@@ -13,4 +13,7 @@ public class ApprovalConfig : AuditTrail
 
     [MaxLength(200)]
     public string? Description { get; set; }
+
+    [NotMapped]
+    public IEnumerable<Approver>? Approvers { get; set; } = Enumerable.Empty<Approver>();
 }
