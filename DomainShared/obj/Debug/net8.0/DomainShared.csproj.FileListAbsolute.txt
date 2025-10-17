@@ -1,0 +1,15 @@
+D:\AttendanceSystemGSS\DomainShared\bin\Debug\net8.0\DomainShared.deps.json
+D:\AttendanceSystemGSS\DomainShared\bin\Debug\net8.0\DomainShared.dll
+D:\AttendanceSystemGSS\DomainShared\bin\Debug\net8.0\DomainShared.pdb
+D:\AttendanceSystemGSS\DomainShared\bin\Debug\net8.0\Domain.dll
+D:\AttendanceSystemGSS\DomainShared\bin\Debug\net8.0\Domain.pdb
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\DomainShared.csproj.AssemblyReference.cache
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\DomainShared.GeneratedMSBuildEditorConfig.editorconfig
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\DomainShared.AssemblyInfoInputs.cache
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\DomainShared.AssemblyInfo.cs
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\DomainShared.csproj.CoreCompileInputs.cache
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\DomainSh.1A19EF8A.Up2Date
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\DomainShared.dll
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\refint\DomainShared.dll
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\DomainShared.pdb
+D:\AttendanceSystemGSS\DomainShared\obj\Debug\net8.0\ref\DomainShared.dll
