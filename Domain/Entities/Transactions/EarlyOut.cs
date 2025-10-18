@@ -1,6 +1,7 @@
 ﻿using Domain.Abstracts;
 using Domain.Entities.Masters;
 using Domain.Enums;
+using Domain.ViewModels.Transactions;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -30,4 +31,20 @@ public class EarlyOut : AuditTrail
     public Employee? Employee { get; set; }
     [NotMapped]
     public ApprovalTransaction? ApprovalTransaction { get; set; }
+
+    public EarlyOutPermitForm ConvertToViewModelEarlyOutPermit()
+    {
+        return new EarlyOutPermitForm
+        {
+            Key = this.Key,
+            EmployeeKey = this.EmployeeKey,
+            ApprovalTransactionKey = this.ApprovalTransactionKey,
+            Number = this.Number,
+            DateSubmission = this.DateSubmission,
+            TimeOut = this.TimeOut,
+            Description = this.Description,
+            ApprovalStatus = this.ApprovalStatus,
+            Employee = this.Employee
+        };
+    }
 }

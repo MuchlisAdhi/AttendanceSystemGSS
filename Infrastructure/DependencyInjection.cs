@@ -1,6 +1,7 @@
 ﻿using DomainShared.Interfaces;
 using DomainShared.Services;
 using Infrastructure.Services;
+using Mediator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence;
@@ -16,6 +17,7 @@ public static class DependencyInjection
         services.AddTransient<ICurrentUser, CurrentUserService>();
 
         services.AddPersistence(config);
+        services.AddMediator();
 
         return services;
     }

@@ -1,6 +1,7 @@
 ﻿using Domain.Abstracts;
 using Domain.Entities.Masters;
 using Domain.Enums;
+using Domain.ViewModels.Transactions;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,4 +27,20 @@ public class ApprovalTransaction : AuditTrail
     public Employee? Submitter { get; set; }
     [NotMapped]
     public IEnumerable<ApprovalStamp>? ApprovalStamps { get; set; } = Enumerable.Empty<ApprovalStamp>();
+
+    public ApprovalTransactionListItem ConvertToViewModelApprovalTransactionListItem()
+    {
+        return new ApprovalTransactionListItem
+        {
+            Key = this.Key,
+            ApprovalTransactionDate = this.ApprovalTransactionDate,
+            Submitter = this.Submitter,
+            Category = this.Category,
+            CategoryName = Enum.GetName(typeof(ApprovalCategory), this.Category),
+            ApprovalStatus = this.ApprovalStatus,
+            ApprovalStatusName = Enum.GetName(typeof(ApprovalStatus), this.ApprovalStatus),
+            RejectReason = this.RejectReason,
+            Description = this.Description
+        };
+    }
 }

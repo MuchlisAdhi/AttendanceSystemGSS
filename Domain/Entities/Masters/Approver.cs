@@ -1,5 +1,6 @@
 ﻿using Domain.Abstracts;
 using Domain.Enums;
+using Domain.ViewModels.Masters;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -31,4 +32,20 @@ public class Approver : AuditTrail
     public Employee? User { get; set; }
     [NotMapped]
     public ApprovalConfig? ApprovalConfig { get; set; }
+
+    public ApproverListItem ConvertToApproverListItem()
+    {
+        return new ApproverListItem
+        {
+            ApprovalConfigKey = this.ApprovalConfigKey,
+            EmployeeKey = this.EmployeeKey,
+            Email = this.Email,
+            Position = this.Position,
+            Level = this.Level,
+            Action = this.Action,
+            User = this.User,
+            ApproverCategory = this.ApproverCategory,
+            CanDelete = this.ApproverCategory != ApproverCategory.DirectSupervisor
+        };
+    }
 }

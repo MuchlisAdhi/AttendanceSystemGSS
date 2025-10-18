@@ -1,4 +1,5 @@
 ﻿using Domain.Abstracts;
+using Domain.ViewModels.Masters;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,4 +17,25 @@ public class ApprovalConfig : AuditTrail
 
     [NotMapped]
     public IEnumerable<Approver>? Approvers { get; set; } = Enumerable.Empty<Approver>();
+
+    public ApprovalConfigListItem ConvertToListItem()
+    {
+        return new ApprovalConfigListItem
+        {
+            Key = this.Key,
+            Name = this.Name,
+            Description = this.Description
+        };
+    }
+
+    public ApprovalConfigForm ConvertToForm()
+    {
+        return new ApprovalConfigForm
+        {
+            Key = this.Key,
+            Name = this.Name,
+            Description = this.Description,
+            Approvers = this.Approvers?.Select(x => x.ConvertToApproverListItem())
+        };
+    }
 }

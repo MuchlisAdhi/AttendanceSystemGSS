@@ -1,6 +1,7 @@
 ﻿using Domain.Dtos.Masters;
 using Domain.Entities.Masters;
 using Domain.Enums;
+using Domain.ViewModels.Transactions;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Domain.ViewModels.Masters;
@@ -23,9 +24,7 @@ public class DirectSupervisorList
 {
     public Guid Key { get; set; }
     public string? Code { get; set; }
-    public string? FirstName { get; set; }
-    public string? LastName { get; set; }
-    public string? FullName { get; set; }
+    public string? Name { get; set; }
 }
 
 public class EmployeeForm
@@ -48,6 +47,7 @@ public class EmployeeForm
     public Employee? DirectSupervisor { get; set; }
     public List<SelectListItem> DirectSupervisors { get; set; } = new List<SelectListItem>();
     public EmployeePersonalForm? EmployeePersonal { get; set; }
+    public EmployeeAttendanceForm? EmployeeAttendance { get; set; }
 
     public EmployeeDto ConvertToDto()
     {

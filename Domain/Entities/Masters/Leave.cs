@@ -1,4 +1,5 @@
 ﻿using Domain.Abstracts;
+using Domain.ViewModels.Masters;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -21,4 +22,18 @@ public class Leave : AuditTrail
     public int MaxSubmission { get; set; }
     [MaxLength(200)]
     public string? Description { get; set; } = string.Empty;
+
+    public LeaveForm ConvertToViewModelLeave()
+    {
+        return new LeaveForm
+        {
+            Key = this.Key,
+            Code = this.Code,
+            Name = this.Name,
+            MaxDays = this.MaxDays,
+            MinSubmission = this.MinSubmission,
+            MaxSubmission = this.MaxSubmission,
+            Description = this.Description
+        };
+    }
 }

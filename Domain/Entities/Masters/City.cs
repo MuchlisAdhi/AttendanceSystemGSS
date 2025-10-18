@@ -1,6 +1,8 @@
 ﻿using Domain.Abstracts;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Domain.ViewModels.Masters;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Domain.Entities.Masters;
 
@@ -23,4 +25,44 @@ public class City : AuditTrail
     public Country? Country { get; set; }
     [NotMapped]
     public Province? Province { get; set; }
+
+    public CityForm ConvertToViewModelCityForm()
+    {
+        return new CityForm()
+        {
+            Key = this.Key,
+            Code = this.Code,
+            Name = this.Name,
+            Description = this.Description,
+            CountryKey = this.CountryKey,
+            Country = this.Country,
+            Countries = new List<SelectListItem>(),
+            ProvinceKey = this.ProvinceKey,
+            Province = this.Province,
+            Provinces = new List<SelectListItem>(),
+            CreatedAt = this.CreatedAt,
+            CreatedBy = this.CreatedBy,
+            UpdatedAt = this.UpdatedAt,
+            UpdatedBy = this.UpdatedBy,
+            DeletedAt = this.DeletedAt,
+            DeletedBy = this.DeletedBy
+        };
+    }
+
+    public CityListItem ConvertToViewModelCityListItem()
+    {
+        return new CityListItem()
+        {
+            Key = this.Key,
+            Code = this.Code,
+            Name = this.Name,
+            Description = this.Description,
+            CountryKey = this.CountryKey,
+            Country = this.Country,
+            ProvinceKey = this.ProvinceKey,
+            Province = this.Province,
+            CreatedAt = this.CreatedAt,
+            CreatedBy = this.CreatedBy
+        };
+    }
 }

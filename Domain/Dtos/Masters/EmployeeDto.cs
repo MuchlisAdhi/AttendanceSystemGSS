@@ -1,4 +1,5 @@
-﻿using Domain.Entities.Masters;
+﻿using Domain.Dtos.Transactions;
+using Domain.Entities.Masters;
 using Domain.Enums;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ public class EmployeeDto
     public DateTime? ResignDate { get; set; } = null;
 
     public EmployeePersonalDto? EmployeePersonal { get; set; } = null;
+    public EmployeeAttendanceDto? EmployeeAttendance { get; set; } = null;
 
     public Employee ConvertToEntity()
     {

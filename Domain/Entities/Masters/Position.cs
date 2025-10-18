@@ -1,4 +1,5 @@
 ﻿using Domain.Abstracts;
+using Domain.ViewModels.Masters;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,4 +16,15 @@ public class Position : AuditTrail
     public string Name { get; set; } = null!;
     [StringLength(200)]
     public string? Description { get; set; } = string.Empty;
+
+    public PositionForm ConvertToViewModelPositionForm()
+    {
+        return new PositionForm
+        {
+            Key = this.Key,
+            Code = this.Code,
+            Name = this.Name,
+            Description = this.Description
+        };
+    }
 }
